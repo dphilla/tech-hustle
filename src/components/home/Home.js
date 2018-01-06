@@ -9,6 +9,7 @@ class Home extends Component {
     return (
       <div>
         <h1>This is your Home Page</h1>
+
         <LoginWithLinkedin />
       </div>
     )

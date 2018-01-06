@@ -5,6 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Routes from './utils/Routes';
+require('dotenv').config()
 
 
 

@@ -19,6 +19,21 @@ function fetchCurrentUser () {
 setTimeout(function(){ doFetch(); }, 1500);
 }
 
+let currentUserId = user.getCurrentUserFromCookie()  //send in params
+
+//get all contacts for user
+
+//post to contacts
+
+//get events
+
+//post events
+
+//with time
+
+  //crud interactions
+  //crud notes
+  //finish crud events
 
 
 export {fetchCurrentUser}

@@ -27,10 +27,16 @@ function setCurrentUser(id) {
     document.cookie = "id=" + id;
 }
 
+function getCurrentUserFromCookie () {
+  let raw = document.cookie
+  let id = raw.split("=")[1]
+  return id
+}
+
 function endCurrentUser () {
   clearListCookies()
 }
 
 
 
-export {setCurrentUser, endCurrentUser}
+export {setCurrentUser, endCurrentUser, getCurrentUserFromCookie}

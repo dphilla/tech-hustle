@@ -1,30 +1,39 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-const nav =  require('./NavHelper')
+import LoginWithLinkedin from '../authentication/Linkedin';
 
 
 class Nav extends Component {
   render() {
     return (
       <div
-        onLoad={nav.navOperator}
        >
-         <div>
-        <div id="nav-trigger" className="nav-trigger open">
-          <span className="line" />
-          <span className="line" />
-          <span className="line" />
-        </div>
-        <nav id="nav" className="out">
+         <nav id="navigationBar">
           <ul>
-            <li><span className="nav-label"><a href="/dashboard">dashboard</a></span></li>
-            <li><span className="nav-label"><a href="/analytics">analytics</a></span></li>
-            <li><span className="nav-label"><a href="/contacts">contacts</a></span></li>
-            <li><span className="nav-label"><a href="/users">users</a></span></li>
+            <li>
+              <div className="link">
+                <LoginWithLinkedin />
+              </div>
+            </li>
+            <li>
+              <a href="/home" className="link">Home</a>
+            </li>
+            <li>
+              <a href="/analytics" className="link">Analytics</a>
+            </li>
+            <li>
+              <a href="/contacts" className="link">Contacts</a>
+            </li>
+            <li>
+              <a href="/events" className="link">Events</a>
+            </li>
+            <li>
+              <a href="/users" className="link">Users</a>
+            </li>
           </ul>
         </nav>
-      </div>
+
       </div>
     )
   }

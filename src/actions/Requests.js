@@ -23,9 +23,29 @@ let currentUserId = user.getCurrentUserFromCookie()  //send in params
 
 //get all contacts for user
 
+function getContacts (){
+  fetch('http://localhost:3000/api/v1/contacts', {
+      mode: 'cors',
+      headers: {'Allow-Access-Control-Origin':'*'}
+    })
+      .then(response => response.json())
+        .then(data => {
+
+      })
+      .catch(error => {
+        console.log(error)
+    })
+}
+
 //post to contacts
 
 //get events
+
+function getEvents () {
+  //do some shit
+}
+
+
 
 //post events
 

@@ -45,6 +45,14 @@ function getEvents () {
   //do some shit
 }
 
+function getNotes () {
+
+}
+
+
+function getInteractions() {
+
+}
 
 
 //post events

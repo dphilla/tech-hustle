@@ -13,7 +13,7 @@ class Nav extends Component {
           <ul>
             <li>
               <div className="link">
-                <LoginWithLinkedin />
+                <LoginWithLinkedin current_user={this.props.current_user}/>
               </div>
             </li>
             <li>

@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>This is your Home Page {this.props.current_user} </h1>
+        <h1>This is your Home Page </h1>
       </div>
     )
   }

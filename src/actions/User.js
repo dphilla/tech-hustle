@@ -19,12 +19,14 @@ function clearListCookies()
     document.cookie = name + "=" + value + expires + "; path=/acc/html";
 }
 window.location = ""; // TO REFRESH THE PAGE
+alert(document.cookie)
 }
 
 
 
 function setCurrentUser(id) {
     document.cookie = "id=" + id;
+    window.location = ""; // TO REFRESH THE PAGE
 }
 
 function getCurrentUserFromCookie () {
@@ -33,8 +35,14 @@ function getCurrentUserFromCookie () {
   return id
 }
 
+function deleteCookie () {
+  document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  window.location = ""; // TO REFRESH THE PAGE
+}
+
 function endCurrentUser () {
-  clearListCookies()
+  //clearListCookies()
+  deleteCookie()
 }
 
 

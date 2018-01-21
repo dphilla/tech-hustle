@@ -12,7 +12,6 @@ class LoginWithLinkedin extends Component {
     return (
         <button
           onClick={requests.fetchCurrentUser}
-          onClick={() => alert(this.props.current_user)}
           className="linkedin-signin">
           <a
             href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=7870b7rz0apmts&redirect_uri=http://localhost:3000/auth/linkedin/callback&state=something"

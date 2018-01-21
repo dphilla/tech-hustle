@@ -14,7 +14,7 @@ constructor(props) {
 
   render() {
     return (
-      <h1>Analytics Page {this.props.current_user}</h1>
+      <h1>Analytics Page </h1>
     )
   }
 }

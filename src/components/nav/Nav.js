@@ -19,7 +19,7 @@ class Nav extends Component {
                 </div>
               </li>
               <li>
-                <a href="/home" className="link">Home</a>
+                <a href="/" className="link">Home</a>
               </li>
               <li>
                 <a href="/analytics" className="link">Analytics</a>

@@ -6,6 +6,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Routes from './utils/Routes';
 require('dotenv').config()
+const user = require('./actions/User')
+
 
 
 
@@ -13,7 +15,7 @@ const router = (
     <BrowserRouter>
       <div className="entire-app">
         <Route path="/" component={ App }/>
-        <Routes />
+        <Routes current_user={user.getCurrentUserFromCookie()} />
       </div>
     </BrowserRouter>
 );

@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './Linkedin.css'
 const requests = require('../../actions/Requests')
 const user = require('../../actions/User')
 

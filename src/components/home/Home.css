@@ -1,0 +1,19 @@
+
+.header {
+  background: url(https://www.jobscan.co/blog/wp-content/uploads/2014/12/networking.jpg);
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  top: 0px;
+  text-align: center;
+}
+
+.background-image {
+  background-size: cover;
+  position: relative;
+  width: 50%;
+  height: 50%;
+}
+
+

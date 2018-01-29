@@ -28,9 +28,11 @@ function getContacts (userId){
       mode: 'cors',
       headers: {'Allow-Access-Control-Origin':'*'}
     })
-      .then(response => response.json())
-        //.then(data => {
-      //})
+    .then(function(response) {
+          return response.json()})
+        .then(function(data) {
+          return data[0]
+        })
       .catch(error => {
         console.log(error)
     })
@@ -53,6 +55,9 @@ function getInteractions() {
 
 }
 
+function aThing () {
+ return "hello"
+}
 
 //post events
 
@@ -63,4 +68,4 @@ function getInteractions() {
   //finish crud events
 
 
-export {fetchCurrentUser, getContacts}
+export {fetchCurrentUser, getContacts, aThing};

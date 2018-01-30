@@ -15,9 +15,9 @@ class Contacts extends Component {
     }
 
 //TODO probably set up a obj constructor and bind(?) the methods to this instance
-   getEm (userId) {
-     return getContacts(userId)
-   }
+   //getEm (userId) {
+     //return getContacts(userId)
+   //}
 
   render() {
 
@@ -28,7 +28,7 @@ class Contacts extends Component {
       <div>
        <Card />
          <h1>
-          your contacts: {this.getEm(userId)}
+          your contacts: {getContacts(userId)}
 
          </h1>
          do it {aThing()}

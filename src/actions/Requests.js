@@ -31,7 +31,7 @@ function getContacts (userId) {
     .then(function(response) {
           return response.json()})
         .then(function(data) {
-         return data[0]
+         console.log(data[0])
         })
       .catch(error => {
         console.log(error)

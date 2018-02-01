@@ -22,7 +22,7 @@ class Routes extends Component {
   render() {
     return (
       <div className="routes">
-        <Route exact path="/" render={(routeProps) => ( <Home current_user={this.state.current_user} />)} />
+        <Route exact path="/home" render={(routeProps) => ( <Home current_user={this.state.current_user} />)} />
         <Route path="/analytics" render={(routeProps) => ( <Analytics current_user={this.state.current_user} />)} />
         <Route path="/contacts" render={(routeProps) => ( <Contacts current_user={this.state.current_user} />)} />
         <Route path="/events" render={(routeProps) => ( <Events current_user={this.state.current_user} />)} />

@@ -1,9 +1,27 @@
 
+//import React, { Component } from 'react';
+//import { Link } from 'react-router-dom';
+
+
+//class Events extends Component {
+
+
+
+
+  //render() {
+    //return (
+      //<h1>Events Page</h1>
+    //)
+  //}
+//}
+
+//export default Events;
+
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import EventForm from '../forms/Eventform'
 //const request = require('../../actions/Requests');
-const API = 'https://powerful-stream-11261.herokuapp.com/api/v1'
 
 
 
@@ -18,7 +36,7 @@ class Events extends Component {
 
   componentDidMount() {
   let userId = this.props.current_user
-    fetch(`${API}/events?current_user=${userId}`, {
+    fetch(`http://localhost:3000/api/v1/events?current_user=${userId}`, {
         mode: 'cors',
         headers: {'Allow-Access-Control-Origin':'*'}
       })
@@ -28,9 +46,6 @@ class Events extends Component {
              let events = data
              this.setState({events: events})
            }.bind(this))
-      .catch(error => {
-        console.log(error)
-    })
   }
 
   render() {
@@ -41,18 +56,9 @@ class Events extends Component {
     }
     if (this.state.events) {
       let events = this.state.events
-      if (this.state.events.length == 0) {
-        return (
-          <div>
-          Add some events (and then refresh the page)!
-          <div>
-            <footer>
-             <EventForm current_user={this.props.current_user} />
-            </footer>
-        </div>
-        </div>
-        )
-      }
+    if (this.state.events.length == 0) {
+      return <div>Add some events (and then refresh the page)!</div>
+    }
       return (
         <div>
         <div>

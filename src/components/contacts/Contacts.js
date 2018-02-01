@@ -17,7 +17,6 @@ class Contacts extends Component {
     }
 
   componentDidMount() {
-
   let userId = this.props.current_user
     fetch(`http://localhost:3000/api/v1/contacts?current_user=${userId}`, {
         mode: 'cors',
@@ -31,19 +30,15 @@ class Contacts extends Component {
            }.bind(this))
   }
 
-  render() { //TODO why cant I pass down the props to contact and access the keys on the object? keeps saying undefined when I try to access the key
+  render() {
     if (this.state.contacts) {
       return (
         <div>
           <Card contact={this.state.contacts} />
-           <h1>
-            your contacts: {JSON.stringify(this.state.contacts)}
-           </h1>
-           do it {aThing()}
         </div>
       )
     }
-    return <div>Loading...</div>;
+      return <div>Loading...</div>;
   }
 }
 

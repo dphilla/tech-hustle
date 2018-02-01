@@ -6,6 +6,7 @@ import ContactForm from '../forms/Contactform'
 //const request = require('../../actions/Requests');
 import { getContacts, aThing } from '../../actions/Requests';
 import ContactModal from './ContactModal'
+const API = 'https://powerful-stream-11261.herokuapp.com/api/v1'
 
 
 
@@ -19,7 +20,7 @@ class Contacts extends Component {
 
   componentDidMount() {
   let userId = this.props.current_user
-    fetch(`http://localhost:3000/api/v1/contacts?current_user=${userId}`, {
+    fetch(`${API}/contacts?current_user=${userId}`, {
         mode: 'cors',
         headers: {'Allow-Access-Control-Origin':'*'}
       })
@@ -29,11 +30,31 @@ class Contacts extends Component {
              let contacts = data
              this.setState({contacts: contacts})
            }.bind(this))
+      .catch(error => {
+        console.log(error)
+    })
   }
 
   render() {
+    if (document.cookie === "") {
+      return (
+        <h1> Please Sign in to see and add Contacts! </h1>
+      )
+    }
     if (this.state.contacts) {
       let contacts = this.state.contacts
+      if (this.state.contacts.length == 0) {
+        return (
+          <div>
+          Add some contacts (and then refresh the page)!
+          <div>
+            <footer>
+             <ContactForm current_user={this.props.current_user} />
+            </footer>
+        </div>
+        </div>
+        )
+      }
       return (
         <div>
         <div>
@@ -58,7 +79,7 @@ class Contacts extends Component {
         </div>
       )
     }
-      return <div>Loading...</div>
+      return <div>Add some contacts (and then refresh the page).</div>
   }
 }
 

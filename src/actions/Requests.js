@@ -1,14 +1,18 @@
 
 const user = require('./User')
+const API = 'http://powerful-stream-11261.herokuapp.com'
 
 
 function fetchCurrentUser () {
   function doFetch() {
-    fetch('http://localhost:3000/current_user', {
-      mode: 'cors',
+   fetch(`http://powerful-stream-11261.herokuapp.com/current_user`, {
+      //mode: 'no-cors',
       headers: {'Allow-Access-Control-Origin':'*'}
     })
-      .then(response => response.json())
+      .then(function(response) {
+      return response.json()
+      }
+     )
         .then(data => {
             user.setCurrentUser(data)
       })
@@ -24,8 +28,8 @@ let currentUserId = user.getCurrentUserFromCookie()  //send in params
 //get all contacts for user
 
 function getContacts (userId) {
-  fetch(`http://localhost:3000/api/v1/contacts?current_user=${userId}`, {
-      mode: 'cors',
+  fetch(`${API}/api/v1/contacts?current_user=${userId}`, {
+      mode: 'no-cors',
       headers: {'Allow-Access-Control-Origin':'*'}
     })
     .then(function(response) {

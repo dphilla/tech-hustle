@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Contactform.css'
+const API = 'https://powerful-stream-11261.herokuapp.com/api/v1'
 
 const reactFormContainer = document.querySelector('.react-form-container');
 
@@ -55,7 +56,7 @@ class ContactForm extends React.Component {
 
     let userId = this.props.current_user
 
-    return fetch(`http://localhost:3000/api/v1/contacts?current_user=${userId}`, {
+    return fetch(`${API}/contacts?current_user=${userId}`, {
       method: 'POST',
       body: JSON.stringify(formData),
       mode: 'cors',

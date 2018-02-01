@@ -13,12 +13,10 @@ class Contacts extends Component {
    constructor(props) {
      super(props)
      this.state = {
-       cards: ""
      }
     }
 
-
-  componentWillMount() {
+  componentDidMount() {
 
   let userId = this.props.current_user
     fetch(`http://localhost:3000/api/v1/contacts?current_user=${userId}`, {
@@ -31,21 +29,21 @@ class Contacts extends Component {
              let contacts = data[0]
              this.setState({contacts: contacts})
            }.bind(this))
-        //.catch(error => {
-          //console.log(error)
-      //})
   }
 
-  render() {
-    return (
-      <div>
-       <Card />
-         <h1>
-          your contacts: {JSON.stringify(this.state.contacts)}
-         </h1>
-         do it {aThing()}
-      </div>
-    )
+  render() { //TODO why cant I pass down the props to contact and access the keys on the object? keeps saying undefined when I try to access the key
+    if (this.state.contacts) {
+      return (
+        <div>
+          <Card contact={this.state.contacts} />
+           <h1>
+            your contacts: {JSON.stringify(this.state.contacts)}
+           </h1>
+           do it {aThing()}
+        </div>
+      )
+    }
+    return <div>Loading...</div>;
   }
 }
 

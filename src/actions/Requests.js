@@ -1,11 +1,11 @@
 
 const user = require('./User')
-const API = 'http://powerful-stream-11261.herokuapp.com'
+const API = 'https://powerful-stream-11261.herokuapp.com'
 
 
 function fetchCurrentUser () {
   function doFetch() {
-   fetch(`http://powerful-stream-11261.herokuapp.com/current_user`, {
+   fetch(`https://powerful-stream-11261.herokuapp.com/current_user`, {
       //mode: 'no-cors',
       headers: {'Allow-Access-Control-Origin':'*'}
     })
